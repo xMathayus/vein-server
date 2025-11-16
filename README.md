@@ -10,6 +10,10 @@ This solution consists of a Windows batch script that automates the process desc
 
 To install the VEIN Server, just clone the repo, run install script executable (setup-vein-server.bat), and then run it:
 
+Edit The Start-VeinServer.bat and adjust the launch parameters:
+- **QueryPort=27015 
+- **Port=7777 
+
 ## Screenshots
 
 ### Dashboard
