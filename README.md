@@ -1,42 +1,39 @@
 # VEIN Server
 
-This is a guided bash script for easy setup of a VEIN Demo dedicated server including a dashboard and backup functions.   
+![VEIN Dashboard Logo](dash/static/logo.png)
 
-This solution consists of a bash script that automates the process described at https://ramjet.notion.site/dedicated-servers (as of May 2, 2025), a backup script that can manually or daily backup the servers save data, and a Python program that serves a dashboard for ease of use starting/stopping and logging the server.
+This is a guided Windows setup for quickly installing a VEIN dedicated server, including a dashboard and automated backup functions. 
+
+This solution consists of a Windows batch script that automates the process described at https://ramjet.notion.site/dedicated-servers (as of November 17, 2025), a backup script that can manually or daily backup the servers save data, and a Python program that serves a dashboard for ease of use starting/stopping and logging the server.
 
 ## Installation
 
-To install the VEIN Server, just clone the repo, make the install script executable, and then run it:
-
-```bash
-git clone https://github.com/warmbo/vein-server.git
-cd vein-server
-chmod +x setup-vein-server.sh
-./setup-vein-server.sh
-```
-
-## Usage/Examples
-
-Start server:     `systemctl start vein-server.service`  
-Stop server:      `systemctl stop vein-server.service`  
-Restart server:   `systemctl restart vein-server.service`  
-View logs:       `journalctl -u vein-server.service -f`  
-Dashboard:   `http://<your-server-ip>:5000`  
+To install the VEIN Server, just clone the repo, run install script executable (setup-vein-server.bat), and then run it:
 
 ## Screenshots
 
 ### Dashboard
 ![App Screenshot](https://i.imgur.com/1pDEitr.png)
 
-### setup-vein-server.sh
-![App Screenshot](https://i.imgur.com/jaJuMP4.png)
 
-### backup-vein-server.sh
-![App Screenshot](https://i.imgur.com/6F7sSN9.png)
+## Requirements
 
-## Planned Features
+- **Windows 10 or 11 (64-bit)**
+- **Internet connection** (for SteamCMD and VEIN server downloads)
+- **Python 3.10+** with `py` and `pip` available on `PATH`
+- **PowerShell** with permission to run local scripts
 
-- Server Reset/Wipe with confirmation dialog
-- RCON messaging once implemented in server, for MOTD, server events, etc.
-- System stats such as CPU usage, MEM usage, and save backup storage size monitoring
-- Settings menu for changing server config
+If PowerShell blocks scripts, run this **once** in an elevated PowerShell:
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+```
+
+## Credits / Original Project
+
+All original credit for the concept, Linux implementation, and initial dashboard goes to:
+
+- **warmbo** – original project:  
+  ➜ https://github.com/warmbo/vein-server
+
+This Windows fork simply re-implements the same idea using **PowerShell**, **batch files**, and **Flask** instead of `bash`, `systemd`, and `journalctl`.
