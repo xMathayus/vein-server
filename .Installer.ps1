@@ -32,14 +32,21 @@ $TIME_MULTIPLIER = 16
 # You can edit Engine.ini later to change any of these.
 
 $ALL_CONSOLE_VARIABLES = @'
-vein.AI.AsyncSensing                        = True          ; Compute sight from AI asynchronously.
-vein.AISpawner.Enabled                      = True          ; Enable AI to spawn.
-vein.AISpawner.EnableVirtualization         = True          ; Enable AI virtualization.
+
+; ================================
+;   BOOLEAN VALUE 
+; ================================
+
+; 1.0 = True           (enabled / on)
+; 0.0 = False          (disabled / off)
+
+vein.AI.AsyncSensing                        = 1.000000      ; Compute sight from AI asynchronously.
+vein.AISpawner.EnableVirtualization         = 1.000000      ; Enable AI virtualization.
 vein.AISpawner.FieldOfViewDot               = 0.000000      ; Player field-of-view dot product (-1 to 1).
-vein.AISpawner.HordeMode                    = False         ; Enable horde mode.
+vein.AISpawner.HordeMode                    = 0.000000      ; Enable horde mode.
 vein.AISpawner.Hordes.ChancePerMinute       = 0.050000      ; Hordes spawned per minute (default 0.05).
 vein.AISpawner.Hordes.Duration              = 120.000000    ; Duration of a horde event in seconds (default 120).
-vein.AISpawner.Horde.Enabled                = True          ; Enable horde spawning.
+vein.AISpawner.Horde.Enabled                = 1.000000      ; Enable horde spawning.
 vein.AISpawner.Hordes.MaxDistance           = 25000.000000  ; Distance at which horde event ends (default 25000).
 vein.AISpawner.Hordes.NoiseEffect           = 0.100000      ; Bigger = more likely hordes from noise (default 0.1).
 vein.AISpawner.Hordes.ScentEffect           = 0.500000      ; Bigger = more likely hordes from bad smells (default 0.5).
@@ -49,15 +56,15 @@ vein.AISpawner.ZombieCrawlerPercentage      = 0.100000      ; Fraction of zombie
 vein.AISpawner.ZombieLayerPercentage        = 0.100000      ; Fraction of zombies asleep to start.
 vein.AISpawner.ZombieWalkerPercentage       = 0.700000      ; Fraction of zombies that are walkers.
 
-vein.AlwaysBecomeZombie                     = False         ; Dead characters always become zombies regardless of infection.
-vein.AlwaysFreeLook                         = False         ; Always free-look as if holding the key.
-vein.Animals.NavWalk                        = False         ; Animals use nav walking instead of walking.
+vein.AlwaysBecomeZombie                     = 0.000000      ; Dead characters always become zombies regardless of infection.
+vein.AlwaysFreeLook                         = 0.000000      ; Always free-look as if holding the key.
+vein.Animals.NavWalk                        = 0.000000      ; Animals use nav walking instead of walking.
 
-vein.Animation.UpdateRateOptimizations      = False         ; Enable animation update rate optimizations (don't change at runtime).
+vein.Animation.UpdateRateOptimizations      = 0.000000      ; Enable animation update rate optimizations (don't change at runtime).
 
-vein.Assets.CacheDataAssets                 = True          ; Cache hard-loaded data assets (shows a warning).
+vein.Assets.CacheDataAssets                 = 0.000000      ; Cache hard-loaded data assets (shows a warning).
 
-vein.Autosave.Enabled                       = True          ; Enable autosaves.
+vein.Autosave.Enabled                       = 1.000000      ; Enable autosaves.
 vein.Autosave.Interval                      = 300.000000    ; Seconds between autosaves.
 vein.Autosave.MaxQuantity                   = 10.000000     ; Maximum number of autosaves to keep.
 
@@ -68,8 +75,8 @@ vein.BasicVehicleReplication.PositionInterpSpeed               = 10.000000    ; 
 vein.BasicVehicleReplication.RotationInterpSpeed               = 5.000000     ; Vehicle rotation interpolation speed.
 vein.BasicVehicleReplication.VelocityInterpolationSpeed        = 5.000000     ; Vehicle velocity interpolation speed.
 
-vein.BatchTicks.Active                      = True          ; Batch ticking system is active / running ticks.
-vein.BatchTicks.Enabled                     = True          ; Batch ticking system enabled.
+vein.BatchTicks.Active                      = 1.000000      ; Batch ticking system is active / running ticks.
+vein.BatchTicks.Enabled                     = 1.000000      ; Batch ticking system enabled.
 vein.BatchTicks.PositionGranularity         = 500.000000    ; Size of hierarchical position query box.
 
 vein.BuildObjectDecay                       = 1.000000      ; Build object decay / UC-related tuning.
@@ -78,9 +85,9 @@ vein.BuildObjectPvP                         = 1.000000      ; Can players damage
 vein.Calendar.ElectricalShutoffTimeDays     = 46.000000     ; Days until the power is shut off.
 vein.Calendar.WaterShutoffTimeDays          = 30.000000     ; Days until the water is shut off.
 
-vein.Camera.EnableSprintFOV                 = True          ; Enable or disable zooming when sprinting.
-vein.Camera.FirstPersonADS                  = False         ; Go first-person when ADSing in third-person.
-vein.Camera.FirstPersonBody                 = True          ; Show legs in first-person.
+vein.Camera.EnableSprintFOV                 = 1.000000      ; Enable or disable zooming when sprinting.
+vein.Camera.FirstPersonADS                  = 0.000000      ; Go first-person when ADSing in third-person.
+vein.Camera.FirstPersonBody                 = 1.000000      ; Show legs in first-person.
 vein.Camera.FOV                             = 90.000000     ; Field of view amount.
 vein.Camera.HeadBob                         = 1.000000      ; How much head bob to apply.
 vein.Camera.MeleeViewPunchMultiplier        = 1.000000      ; How much melee view punch to apply.
@@ -89,78 +96,76 @@ vein.Camera.SmoothingRotation               = 0.000000      ; Rotation camera sm
 
 vein.Characters.Max                         = 100.000000    ; Maximum number of characters one player may have.
 
-vein.ClothingHideable                       = False         ; Players can hide their clothes for roleplaying.
+vein.ClothingHideable                       = 0.000000      ; Players can hide their clothes for roleplaying.
 
-vein.Conditions.AlwaysShow                  = False         ; Show all conditions regardless of threshold.
+vein.Conditions.AlwaysShow                  = 0.000000      ; Show all conditions regardless of threshold.
 vein.Conditions.NetworkInterval             = 2.000000      ; Delay between networking condition updates.
 
 vein.Consciousness.RecoveryPerSecond        = 1.666000      ; How much consciousness to recover per second.
 
-vein.Construction.ContinueBuilding          = True          ; Always keep building regardless of holding shift.
+vein.Construction.ContinueBuilding          = 1.000000      ; Always keep building regardless of holding shift.
 
-vein.ContainersRespawn.Enabled              = True          ; Empty containers will respawn items.
+vein.ContainersRespawn.Enabled              = 1.000000      ; Empty containers will respawn items.
 vein.ContainersRespawn.Interval             = 10800.000000  ; How frequently containers respawn contents (seconds).
 
-vein.DeadDoorsIntact                        = False         ; True = damaging doors, False = crumble instantly.
+vein.DeadDoorsIntact                        = 0.000000      ; True = damaging doors, False = crumble instantly.
 
 vein.Firearm.BloodSplatter.MaxDecals        = 4.000000      ; How many blood decals to spawn from a firearm.
 vein.Firearm.BloodSplatter.MaxDistance      = 300.000000    ; Max distance for blood decals from a firearm.
 
-vein.Furniture.PhysicalFall                 = True          ; Furniture physically falls to the ground.
+vein.Furniture.PhysicalFall                 = 1.000000      ; Furniture physically falls to the ground.
 vein.Furniture.RespawnRate                  = 3000.000000   ; Seconds to respawn furniture.
 
 vein.Gamma                                  = 2.200000      ; Gamma value.
 
-vein.GoreHoles.Enabled                      = False         ; Enable gore holes.
+vein.GoreHoles.Enabled                      = 0.000000      ; Enable gore holes.
 
 vein.HeadshotDamageMultiplier               = 1.000000      ; How much more or less damage headshots do.
 
-vein.HideChat                               = False         ; Hide all chat.
-vein.HideNameplates                         = False         ; Hide player names.
+vein.HideChat                               = 0.000000      ; Hide all chat.
+vein.HideNameplates                         = 0.000000      ; Hide player names.
 
-vein.Holidays.AlwaysSpawn                   = False         ; Always spawn holiday actors, even off-season.
+vein.Holidays.AlwaysSpawn                   = 0.000000      ; Always spawn holiday actors, even off-season.
 
-vein.HUD.HideAllNameplates                  = False         ; Hide all item/player/etc nameplates.
+vein.HUD.HideAllNameplates                  = 0.000000      ; Hide all item/player/etc nameplates.
 
-vein.Inventory.DisableNetworkFlush          = False         ; Disable automatic inventory networking from KV updates.
-vein.Inventory.NetworkDelay                 = True          ; Reduce the frequency of inventory networking.
+vein.Inventory.DisableNetworkFlush          = 0.000000      ; Disable automatic inventory networking from KV updates.
+vein.Inventory.NetworkDelay                 = 1.000000      ; Reduce the frequency of inventory networking.
 vein.Inventory.NetworkDelay.Interval        = 5.000000      ; Default network delay interval.
 vein.Inventory.NetworkDelay.IntervalJitter  = 0.100000      ; Extra delay to prevent stacked frames.
-vein.Inventory.QuickDismantleEnabled        = False         ; Enable alt-click dismantle on items.
+vein.Inventory.QuickDismantleEnabled        = 0.000000      ; Enable alt-click dismantle on items.
 
-vein.InvertedPitch                          = False         ; Inverted mouse pitch.
+vein.InvertedPitch                          = 0.000000      ; Inverted mouse pitch.
 
 vein.ItemActorSpawner.RespawnInterval       = 3600.000000   ; Item actor spawner respawn interval (seconds).
-vein.ItemActorSpawner.Respawns              = True          ; Item actor spawners ever respawn.
+vein.ItemActorSpawner.Respawns              = 1.000000      ; Item actor spawners ever respawn.
 
 vein.Landscape.LODCurvesEnabled             = 0.000000      ; Enable landscape LOD curves.
 
-vein.LightOptimizationManager.Enabled       = False         ; Enable or disable dynamic shadow culling.
+vein.LightOptimizationManager.Enabled       = 0.000000      ; Enable or disable dynamic shadow culling.
 
 vein.MeleeSlowdownDuration                  = 0.100000      ; How long to slow down melee animations on impact.
 vein.MeleeSlowdownSpeed                     = 0.200000      ; How much to slow down melee animations on impact.
 
-vein.Multiplayer.AllowDifferentVersions     = False         ; Allow different-versioned servers (may crash).
+vein.Multiplayer.AllowDifferentVersions     = 0.000000      ; Allow different-versioned servers (may crash).
 
-vein.Music.Enabled                          = True          ; Enable music.
+vein.Music.Enabled                          = 1.000000      ; Enable music.
 
-vein.NoSaves                                = False         ; Players cannot save.
-vein.Permadeath                             = False         ; Players cannot respawn.
+vein.NoSaves                                = 0.000000      ; Players cannot save.
+vein.Permadeath                             = 0.000000      ; Players cannot respawn.
 
-vein.PersistentCorpses                      = True          ; Enable persistent corpses.
+vein.PersistentCorpses                      = 1.000000      ; Enable persistent corpses.
 vein.PersistentCorpses.CorpseRemovalDelay   = 120.000000    ; How fast corpses are removed (seconds).
 
 vein.PhysicsProxy.BlockSize                 = 5000.000000   ; Block size to put foliage into.
 vein.PhysicsProxy.CapsuleTimeBudget         = 1.000000      ; Max time to spend updating capsules per frame.
-vein.PhysicsProxy.Enabled                   = True          ; Physics proxies update when True.
+vein.PhysicsProxy.Enabled                   = 1.000000          ; Physics proxies update when True.
 vein.PhysicsProxy.MaxDistance               = 2500.000000   ; Max distance to allow physics proxies from a player.
 vein.PhysicsProxy.NumProxies                = 300.000000    ; Number of physics proxies (changing in-game does nothing).
 
 vein.Placement.MaxPlacementAttachParents    = 5.000000      ; Maximum attachment chain when placing objects.
 
 vein.PunchInterval                          = 0.500000      ; How fast players and NPCs can punch.
-
-vein.PvP                                    = 1.000000      ; Can players damage other players?
 
 vein.RagdollDragForce                       = 1000000.000000 ; Force applied when dragging ragdolls.
 
@@ -409,14 +414,8 @@ Port=$PORT
 [ConsoleVariables]
 $ALL_CONSOLE_VARIABLES
 
-vein.Zombies.LayingDownDistance             = 500.000000    ; Distance at which zombies 'wake up' from stimuli.
-vein.Zombies.NavWalk                        = True          ; Zombies use nav walking instead of direct walking.
-vein.Zombies.SightMultiplier                = 1.000000      ; Zombie sight multiplier.
-vein.Zombies.SpeedMultiplier                = 1.000000      ; Zombie speed multiplier.
-
-vein.PvP                                    = $pvpValue     ; Players can damage other players.
-vein.AISpawner.Enabled                      = $aiValue      ; Enable or disable AI spawning via installer toggle.
-vein.Time.TimeMultiplier                    = $TIME_MULTIPLIER ; Global time scale multiplier (installer toggle).
+vein.PvP                                    = $pvpValue          ; Players can damage other players.
+vein.AISpawner.Enabled                      = $aiValue          ; Enable or disable AI spawning via installer toggle.
 "@
 
     $engineContent | Set-Content -Path $engineFile -Encoding UTF8
