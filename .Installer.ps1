@@ -407,15 +407,22 @@ Port=$PORT
     # 3b) Engine.ini
     Log "Step 3b: Writing Engine.ini (console variables)..."
     $engineFile = Join-Path $configDir "Engine.ini"
-    $pvpValue   = if ($PVP_ENABLED) { "True" } else { "False" }
-    $aiValue    = if ($AI_ENABLED)  { "True" } else { "False" }
+
+    # Convert PowerShell True/False → VEIN float booleans
+    function BoolToVein($value) {
+        if ($value -eq $true) { return "1.000000" }
+        else { return "0.000000" }
+    }
+
+    $pvpValue = BoolToVein $PVP_ENABLED
+    $aiValue  = BoolToVein $AI_ENABLED
 
     $engineContent = @"
 [ConsoleVariables]
 $ALL_CONSOLE_VARIABLES
 
-vein.PvP                                    = $pvpValue          ; Players can damage other players.
-vein.AISpawner.Enabled                      = $aiValue          ; Enable or disable AI spawning via installer toggle.
+vein.PvP                                    = $pvpValue      ; Players can damage other players.
+vein.AISpawner.Enabled                      = $aiValue      ; Enable or disable AI spawning via installer toggle.
 "@
 
     $engineContent | Set-Content -Path $engineFile -Encoding UTF8
